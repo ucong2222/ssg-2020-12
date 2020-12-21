@@ -21,20 +21,20 @@ USE `textBoard`;
 DROP TABLE IF EXISTS `article`;
 
 CREATE TABLE `article` (
-  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
-  `regDate` datetime NOT NULL,
-  `updateDate` datetime NOT NULL,
-  `title` char(100) NOT NULL,
-  `body` text NOT NULL,
-  `memberId` int(10) unsigned NOT NULL,
-  `boardId` int(10) unsigned NOT NULL,
-  `hit` int(10) unsigned NOT NULL,
+  `id` INT(10) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `regDate` DATETIME NOT NULL,
+  `updateDate` DATETIME NOT NULL,
+  `title` CHAR(100) NOT NULL,
+  `body` TEXT NOT NULL,
+  `memberId` INT(10) UNSIGNED NOT NULL,
+  `boardId` INT(10) UNSIGNED NOT NULL,
+  `hit` INT(10) UNSIGNED NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4;
+) ENGINE=INNODB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4;
 
 /*Data for the table `article` */
 
-insert  into `article`(`id`,`regDate`,`updateDate`,`title`,`body`,`memberId`,`boardId`,`hit`) values 
+INSERT  INTO `article`(`id`,`regDate`,`updateDate`,`title`,`body`,`memberId`,`boardId`,`hit`) VALUES 
 (1,'2020-12-17 19:05:22','2020-12-17 19:05:22','1강, JAVA 출력하기','# JAVA) Hello 출력하기\r\n\r\n# JAVA 예시\r\n```java\r\npublic class Main(){\r\n    public static void main(String[] args){\r\n        System.out.println(\"Hello\");\r\n    }\r\n}\r\n```',1,3,0),
 (2,'2020-12-17 19:08:41','2020-12-17 19:08:41','2강, JAVA 입력하기','# JAVA) Scanner class 이용해 입력하기\r\n\r\n# JAVA 예시\r\n```java\r\nimport java.util.Scanner;\r\n\r\npublic class Main(){\r\n    public static void main(String[] args){\r\n        Scanner sc = new Scanner(System.in);\r\n        String cmd = sc.nextLine();\r\n    }\r\n}\r\n```',1,3,0);
 
@@ -43,13 +43,13 @@ insert  into `article`(`id`,`regDate`,`updateDate`,`title`,`body`,`memberId`,`bo
 DROP TABLE IF EXISTS `articleReply`;
 
 CREATE TABLE `articleReply` (
-  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
-  `regDate` datetime NOT NULL,
-  `body` text NOT NULL,
-  `memberId` int(10) unsigned NOT NULL,
-  `articleId` int(10) unsigned NOT NULL,
+  `id` INT(10) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `regDate` DATETIME NOT NULL,
+  `body` TEXT NOT NULL,
+  `memberId` INT(10) UNSIGNED NOT NULL,
+  `articleId` INT(10) UNSIGNED NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=INNODB DEFAULT CHARSET=utf8mb4;
 
 /*Data for the table `articleReply` */
 
@@ -58,38 +58,38 @@ CREATE TABLE `articleReply` (
 DROP TABLE IF EXISTS `board`;
 
 CREATE TABLE `board` (
-  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
-  `regDate` datetime DEFAULT NULL,
-  `updateDate` datetime DEFAULT NULL,
-  `name` char(20) NOT NULL,
-  `code` char(20) NOT NULL,
+  `id` INT(10) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `regDate` DATETIME DEFAULT NULL,
+  `updateDate` DATETIME DEFAULT NULL,
+  `name` CHAR(20) NOT NULL,
+  `code` CHAR(20) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4;
+) ENGINE=INNODB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4;
 
 /*Data for the table `board` */
 
-insert  into `board`(`id`,`regDate`,`updateDate`,`name`,`code`) values 
+INSERT  INTO `board`(`id`,`regDate`,`updateDate`,`name`,`code`) VALUES 
 (1,'2020-12-17 19:05:22','2020-12-17 19:05:22','공지사항','notice'),
-(2,'2020-12-17 19:05:22','2020-12-17 19:05:22','자유','free'),
-(3,'2020-12-17 19:05:22','2020-12-17 19:05:22','JAVA','it');
+(2,'2020-12-17 19:05:22','2020-12-17 19:05:22','일상','daily'),
+(3,'2020-12-17 19:05:22','2020-12-17 19:05:22','공부','study');
 
 /*Table structure for table `member` */
 
 DROP TABLE IF EXISTS `member`;
 
 CREATE TABLE `member` (
-  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
-  `regDate` datetime NOT NULL,
-  `updateDate` datetime NOT NULL,
-  `loginId` char(30) NOT NULL,
-  `loginPw` varchar(50) NOT NULL,
-  `name` char(30) NOT NULL,
+  `id` INT(10) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `regDate` DATETIME NOT NULL,
+  `updateDate` DATETIME NOT NULL,
+  `loginId` CHAR(30) NOT NULL,
+  `loginPw` VARCHAR(50) NOT NULL,
+  `name` CHAR(30) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4;
+) ENGINE=INNODB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4;
 
 /*Data for the table `member` */
 
-insert  into `member`(`id`,`regDate`,`updateDate`,`loginId`,`loginPw`,`name`) values 
+INSERT  INTO `member`(`id`,`regDate`,`updateDate`,`loginId`,`loginPw`,`name`) VALUES 
 (1,'2020-12-17 19:05:22','2020-12-17 19:05:22','admin','admin','김유콩');
 
 /*Table structure for table `recommand` */
@@ -97,13 +97,13 @@ insert  into `member`(`id`,`regDate`,`updateDate`,`loginId`,`loginPw`,`name`) va
 DROP TABLE IF EXISTS `recommand`;
 
 CREATE TABLE `recommand` (
-  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
-  `regDate` datetime NOT NULL,
-  `updateDate` datetime NOT NULL,
-  `articleId` int(10) unsigned NOT NULL,
-  `memberId` int(10) unsigned NOT NULL,
+  `id` INT(10) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `regDate` DATETIME NOT NULL,
+  `updateDate` DATETIME NOT NULL,
+  `articleId` INT(10) UNSIGNED NOT NULL,
+  `memberId` INT(10) UNSIGNED NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=INNODB DEFAULT CHARSET=utf8mb4;
 
 /*Data for the table `recommand` */
 
@@ -111,3 +111,5 @@ CREATE TABLE `recommand` (
 /*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
 /*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+
+

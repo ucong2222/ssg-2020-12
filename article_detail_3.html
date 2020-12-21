@@ -69,14 +69,74 @@
 
 		<main class="flex-grow-1">
 			<section class="title-bar con-min-width">
-				<h1 class="con"><i class="fas fa-home"></i> <span>HOME</span></h1>
-			</section><section class="home-content__body con-min-width">
-    <div class="con flex flex-jc-c bd-home bd-box">
-      <img src="https://cdn.pixabay.com/photo/2017/11/13/13/34/christmas-card-2945633_960_720.jpg" alt="">
-      <span class="blinkEle">HeyCong blog에 오신걸 환영합니다 !</span>
-      <span class="blinkEle">HeyCong blog에 오신걸 환영합니다 !</span>
+				<h1 class="con"><i class="fas fa-file-alt"></i> <span>ARTICLE DETAIL</span></h1>
+			</section><!-- 하이라이트 라이브러리 추가, 토스트 UI 에디터에서 사용됨 -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.4.1/highlight.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.4.1/styles/default.min.css">
+
+<!-- 토스트 UI 에디터, 자바스크립트 코어 -->
+<script src="https://uicdn.toast.com/editor/latest/toastui-editor-all.min.js"></script>
+
+<!-- 코드 미러 라이브러리 추가, 토스트 UI 에디터에서 사용됨 -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.58.3/codemirror.min.css" />
+<!-- 토스트 UI 에디터, CSS 코어 -->
+<link rel="stylesheet" href="https://uicdn.toast.com/editor/latest/toastui-editor.min.css" />
+
+<!-- 토스트 UI 에디터, 신택스 하이라이트 플러그인 추가 -->
+<script src="https://uicdn.toast.com/editor-plugin-code-syntax-highlight/latest/toastui-editor-plugin-code-syntax-highlight.min.js"></script>
+
+<section class="article-detail-box con-min-width">
+    <div class="con article-detail bg-white bd-body-box bd-box">
+      <header>
+       <h1 class= "article-detail__title">2강, JAVA 입력하기</h1>
+          <div class="article-detail__info flex">
+            <div class="article-detail__cell-board-name">공부게시판</div>
+            <div class="article-detail__cell-writer">김유콩</div>
+            <div class="article-detail__cell-reg-date">2020-12-17 19:08:41</div>
+            <div class="count flex">
+              <div class="article-detail__cell-hit">조회수</div>0
+              <div class="article-detail__cell-recommand">추천수</div>0
+            </div>
+          </div>
+      </header>
+      <main class="article-detail__body min-height-45vh"># JAVA) Scanner class 이용해 입력하기
+
+# JAVA 예시
+```java
+import java.util.Scanner;
+
+public class Main(){
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        String cmd = sc.nextLine();
+    }
+}
+```
+      </main>
+      <div class="article-detail__bottom flex flex-jc-e">
+       <a href="article_list_study_1.html" class="hover-underline">목록</a>
+          <a title="1강, JAVA 출력하기" href="article_detail_2.html" class="hover-underline ">&lt; 이전글</a>
+          <a title="" href="article_detail_0.html" class="hover-underline none">다음글 &gt;</a>
+      </div>
+      <div class="article-detail__reply-box">
+          <div id="disqus_thread"></div>
+          <script>
+                (function() { // DON'T EDIT BELOW THIS LINE
+                var d = document, s = d.createElement('script');
+                s.src = 'https://cong-ssg.disqus.com/embed.js';
+                s.setAttribute('data-timestamp', +new Date());
+                (d.head || d.body).appendChild(s);
+                })();
+          </script>
+          <noscript>
+             Please enable JavaScript to view the 
+             <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+          </noscript>
+      </div>
     </div>
-  </section></main>
+  </section>
+  
+  </main>
 
 <footer class="bottom-bar con-min-width">
 	<div class="con flex flex-ai-c flex-jc-c">
