@@ -132,7 +132,25 @@ a {
 	background-color: blue;
 }
 
+.bg-white{
+	background-color:white;
+}
 
+
+.bg-body{
+	background: linear-gradient( to bottom, rgba(255,156,158)
+, white	 );
+}
+
+.bd-home{
+	border: 20px solid #8f6156;
+	border-radius:10px;
+}
+
+.bd-body-box{
+	border: 10px solid #d9534f;
+	border-radius:10px;
+}
 /* 커스텀 */
 .con-min-width {
 	min-width: 1200px;
@@ -143,29 +161,27 @@ a {
 	width: 1200px;
 }
 
-/* 로고 시작 */
-.logo {
-	font-size: 4rem;
+.bd-box{
+	box-sizing:border-box;
 }
 
-.logo>span {
-	margin-left: 10px;
+/* 로고 시작 */
+.logo>img{
+  width:500px;
+  height:150px;
 }
 
 /* 로고 끝 */
 
 /* 로고바 시작 */
 .logo-bar{
-	background-color: black;
-	color: white;
-	height: 150px;
+	height: 200px;
 }
 /* 로고바 끝 */
 
 /*메뉴바 시작*/
 .menu-bar{
-  background-color:black;
-  color:white;
+  color:#d9534f;
 }
 /*메뉴바 끝*/
 
@@ -177,6 +193,7 @@ a {
 
 .menu-bar__menu-1>ul>li{
   width:25%;
+  border-bottom:5px solid;
 }
 
 .menu-bar__menu-1 ul>li>a{
@@ -190,8 +207,11 @@ a {
 }
 
 .menu-bar__menu-1 ul>li:hover>a{
-  background-color:white;
-  color:black;
+  background-color:rgba(255,156,158);
+  color:white;
+}
+.menu-bar__menu-1>ul>li:hover>a{
+  background-color:inherit;
 }
 
 .menu-bar__menu-1>ul ul{
@@ -201,14 +221,14 @@ a {
   width:100%;
   left:-10px;
   border-radius:0 0 20px 20px;
-  border:10px solid black;
-  border-top-width:0;
+  border:5px solid #d9534f;
+  border-top:5px solid rgba(255,181,183);
   z-index:10;
 }
 
 .menu-bar__menu-1>ul>li:hover>ul{
-  background-color:black;
-  color:white;
+  background-color:rgba(255,181,183);
+  color:#d9534f;
   display:block;
 }
 
@@ -221,9 +241,32 @@ a {
 /*타이틀바 시작*/
 .title-bar{
   margin:30px 0;
+   color:#d9534f;
 }
 /*타이틀바 끝*/
 
+/*홈바디 시작*/
+.home-content__body>div{
+  position:relative;
+}
+.home-content__body>div>img{
+  width:100%;
+}
+
+.home-content__body>div>span{
+  position:absolute;
+  left:30.2%;
+  bottom:14.6%;
+  font-size:3rem;
+  font-weight:bold;
+}
+.home-content__body>div>span:last-child{
+  position:absolute;
+  left:30%;
+  bottom:15%;
+  color:red;
+}
+/*홈바디 끝*/
 
 /*게시물리스트 시작*/
 
@@ -235,6 +278,12 @@ a {
   --article-list__cell-recommand__width:70px;
   --article-list__cell-title__width:calc(100% - var(--article-list__cell-id__width) - var(--article-list__cell-reg-date__width) - var(--article-list__cell-writer__width) - var(--article-list__cell-hit__width) - var(--article-list__cell-recommand__width));
 }
+
+.article-list-box{
+  padding:20px;
+  border-radius:10px;
+}
+
 .article-list__cell-id {
   width:var(--article-list__cell-id__width);
 }
@@ -256,8 +305,15 @@ a {
 .article-list__cell-title {
   width:var(--article-list__cell-title__width);
 }
+
+.article-list>header{
+  border:solid #d9534f;
+  background-color:#d9534f;
+}
+
 .article-list>header>div>div{
   position:relative;
+  color:white;
 }
 
 
@@ -267,11 +323,11 @@ a {
   box-sizing:border-box;
 }
 
-.article-list>header>div>div::after{
+.article-list>header>div>div:not(:last-child)::after{
   content:"";
   width:1px;
-  height:20px;
-  background-color:black;
+  height:48px;
+  background-color:pink;
   position:absolute;
   top:50%;
   transform:translatey(-50%);
@@ -279,7 +335,13 @@ a {
 }
 
 .article-list>main>div{
-  border-top:solid 1px black;
+  border-top:solid 2px #d9534f;
+}
+.article-list>main>div:last-child{
+  border-bottom:solid 4px #d9534f;
+}
+.article-list>main>div:hover{
+  background-color:rgba(217,83,79,0.2);
 }
 
 .article-list>main .article-list__cell-title{
@@ -317,16 +379,18 @@ a {
 
 /*상세게시물 시작*/
 :root{
+  --article-detail__cell-board-name__width: 90px;
   --article-detail__cell-reg-date__width:220px;
   --article-detail__cell-writer__width:120px;
   --article-detail__cell-hit__width:70px;
   --article-detail__cell-recommand__width:70px;
 }
-
+.article-detail{
+  padding:10px;
+}
 .article-detail__cell-board-name{
   padding-right:10px;
 }
-
 .article-detail__cell-writer{
   padding-right:10px;
 }
@@ -343,10 +407,12 @@ a {
   right:0;
   padding-right:10px;
 }
-.article-detail>div>header{
+.article-detail>header{
   padding:20px 0;
-  border-top:solid 3px rgba(0,0,0,0.2);
   border-bottom:solid 3px rgba(0,0,0,0.2);
+}
+.article-detail{
+  border-radius:10px;
 }
 .article-detail__info{
   margin-top:10px;
@@ -368,21 +434,108 @@ a {
 
 /*상세게시물 끝*/
 
+/*통계 시작*/
+:root{
+  --article-stat__menu-totalMembersCount__width:100px;
+  --article-stat__menu-totalArticlesCount__width:150px;
+  --article-stat__menu-totalArticlesHit__width:170px;
+  --article-stat__menu-boardArticlesCount__width:190px;
+  --article-stat__menu-boardArticlesHit__width:230px;
+}
+.article-stat__menu-totalMembersCount {
+  width:var(--article-stat__menu-totalMembersCount__width);
+}
+.article-stat__menu-totalArticlesCount {
+  width:var(--article-stat__menu-totalArticlesCount__width);
+}
+.article-stat__menu-totalArticlesHit {
+  width:var(--article-stat__menu-totalArticlesHit__width);
+}
+.article-stat__menu-boardArticlesCount {
+  width:var(--article-stat__menu-boardArticlesCount__width);
+}
+.article-stat__menu-boardArticlesHit {
+  width:var(--article-stat__menu-boardArticlesHit__width);
+}
+.article-stat__menu>*{
+  font-size:1rem;
+  font-weight:bold;
+  color:#d9534f;
+  height:50px;
+  transition:background-color 1s, font-size 1s,color 1s, width 1s;
+  border-radius:10px 10px 0 0 ;
+}
+
+.article-stat__content > *{
+  position:relative;
+}
+
+.article-stat__content>div>img{
+  padding:10px 0;
+}
+.article-stat__content>div>div>div{
+
+  margin:20px 0;
+}
+.article-stat__content-totalMembersCount>div{
+  font-size:2rem;
+  position:absolute;
+  top:50%;
+  left:50%;
+  transform:translatex(-50%);
+  
+}
+.article-stat__content-totalArticlesCount>div{
+  position:absolute;
+  top:70%;
+  left:17.5%;
+  font-size:3rem;
+  color:rgba(78,158,190);
+}
+.article-stat__content-totalArticlesHit>div{
+  position:absolute;
+  top:40%;
+  left:32.5%;
+  font-size:3rem;
+  color:rgba(78,158,190);
+}
+.article-stat__content-boardArticlesCount>div{
+  position:absolute;
+  top:40%;
+  left:8%;
+  font-size:2rem;
+  color:rgba(78,158,190);
+  
+}
+.article-stat__content-boardArticlesHit>div{
+  position:absolute;
+  top:25%;
+  left:8%;
+  font-size:2rem;
+  color:rgba(78,158,190);
+}
+
+
+/*통계 끝*/
+
 
 /*하단바 시작*/
 .bottom-bar{
   margin-top:30px;
-  background-color:black;
+  background-color:#d9534f;
   color:white;
-  padding:30px 0;
+  padding:10px 0;
 }
 
 .bottom-bar__site-info{
   margin-left:20px;
+  text-transform:uppercase;
 }
 
-.logo-mini{
-  font-size:3rem;
+.logo-mini>img{
+  width:100px;
+  height:40px;
+  
 }
 
 /*하단바 끝*/
