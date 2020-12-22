@@ -71,7 +71,7 @@
 			<section class="title-bar con-min-width">
 				<h1 class="con"><i class="fas fa-home"></i> <span>HOME</span></h1>
 			</section><section class="home-content__body con-min-width">
-      <div class="con slideshow-container min-height-80vh">
+      <div class="con slideshow-container">
 
         <div id="wrapper">
           <div id="slider-wrap">
@@ -272,6 +272,7 @@ function pagination(){
       $('.article-stat__menu > *').css('color', '');
       $('.article-stat__content').css('display', 'none');
       $('.article-stat__content > *').css('display', 'none');
+      
     }
 
 
@@ -295,6 +296,7 @@ function pagination(){
       $('.article-stat__menu-totalArticlesCount').css('color', 'white');
        $('.article-stat__content-totalArticlesCount').css('display', 'flex');
       $('.article-stat__content').css('display', 'flex');
+      $('.article-stat__info').css('display', 'none');
     });
 
     $('.article-stat__menu-totalArticlesHit').click(function() {

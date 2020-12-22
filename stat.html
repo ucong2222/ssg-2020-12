@@ -98,7 +98,14 @@
         </div>
       </div>
     </div>
-  </section></main>
+  </section>
+  <section class="con-min-width">
+        <div class="article-stat__info con">
+        <h1>
+          내용을 확인하려면 메뉴판을 클릭해주세요.
+        </h1>
+      </div>
+   </section></main>
 
 <footer class="bottom-bar con-min-width">
 	<div class="con flex flex-ai-c flex-jc-c">
@@ -234,6 +241,7 @@ function pagination(){
       $('.article-stat__menu > *').css('color', '');
       $('.article-stat__content').css('display', 'none');
       $('.article-stat__content > *').css('display', 'none');
+      
     }
 
 
@@ -257,6 +265,7 @@ function pagination(){
       $('.article-stat__menu-totalArticlesCount').css('color', 'white');
        $('.article-stat__content-totalArticlesCount').css('display', 'flex');
       $('.article-stat__content').css('display', 'flex');
+      $('.article-stat__info').css('display', 'none');
     });
 
     $('.article-stat__menu-totalArticlesHit').click(function() {
