@@ -88,27 +88,32 @@
 <section class="article-detail-box con-min-width">
     <div class="con article-detail bg-white bd-body-box bd-box">
       <header>
-       <h1 class= "article-detail__title">HeyCong blog에 오신걸 환영합니다 :)</h1>
+       <h1 class= "article-detail__title">1강, JAVA 출력하기</h1>
           <div class="article-detail__info flex">
-            <div class="article-detail__cell-board-name">공지사항게시판</div>
+            <div class="article-detail__cell-board-name">공부게시판</div>
             <div class="article-detail__cell-writer">김유콩</div>
-            <div class="article-detail__cell-reg-date">2020-12-17 12:00:00</div>
+            <div class="article-detail__cell-reg-date">2020-12-17 19:05:22</div>
             <div class="count flex">
               <div class="article-detail__cell-hit">조회수</div>0
               <div class="article-detail__cell-recommand">추천수</div>0
             </div>
           </div>
       </header>
-      <main class="article-detail__body min-height-45vh">안녕하세요! 저는 HeyCong blog 운영자 김유경입니다!
-이 블로그는 개인블로그이자 저의 포토폴리오 작품입니다!
-이곳을 통해 저의 일상과 JAVA, SQL, HTML, CSS 등 IT관련 내용을 여러분과 공유할 생각입니다.
-아직 부족한 실력으로 부족한 점들이 있지만 공부를 하며 보완해나갈 생각입니다!
-다들 건강하시고 행복한 하루 보내세요! >3<~♥
+      <main class="article-detail__body min-height-45vh"># JAVA) Hello 출력하기
+
+# JAVA 예시
+```java
+public class Main(){
+    public static void main(String[] args){
+        System.out.println("Hello");
+    }
+}
+```
       </main>
       <div class="article-detail__bottom flex flex-jc-e">
-       <a href="article_list_notice_1.html" class="hover-underline">목록</a>
+       <a href="article_list_study_1.html" class="hover-underline">목록</a>
           <a title="" href="article_detail_0.html" class="hover-underline none">&lt; 이전글</a>
-          <a title="" href="article_detail_0.html" class="hover-underline none">다음글 &gt;</a>
+          <a title="2강, JAVA 입력하기" href="article_detail_2.html" class="hover-underline ">다음글 &gt;</a>
       </div>
       <div class="article-detail__reply-box">
           <div id="disqus_thread"></div>
@@ -152,9 +157,110 @@
         minOpacity: 0.2, // 최소 투명도 0: 투명 | 1: 불투명
         maxOpacity: 0.6 // 최대 투명도
     });
-    setInterval(function(){
-    	  $(".blinkEle").toggle();
-    	}, 800);
+   	/*home.index*/
+   	//current position
+var pos = 0;
+//number of slides
+var totalSlides = $('#slider-wrap ul li').length;
+//get the slide width
+var sliderWidth = $('#slider-wrap').width();
+
+
+$(document).ready(function(){
+  
+  
+  /*****************
+   BUILD THE SLIDER
+  *****************/
+  //set width to be 'x' times the number of slides
+  $('#slider-wrap ul#slider').width(sliderWidth*totalSlides);
+  
+    //next slide  
+  $('#next').click(function(){
+    slideRight();
+  });
+  
+  //previous slide
+  $('#previous').click(function(){
+    slideLeft();
+  });
+  
+  
+  
+  /*************************
+   //*> OPTIONAL SETTINGS
+  ************************/
+  //automatic slider
+  var autoSlider = setInterval(slideRight, 3000);
+  
+  //for each slide 
+  $.each($('#slider-wrap ul li'), function() { 
+
+     //create a pagination
+     var li = document.createElement('li');
+     $('#pagination-wrap ul').append(li);    
+  });
+  
+  //counter
+  countSlides();
+  
+  //pagination
+  pagination();
+  
+  //hide/show controls/btns when hover
+  //pause automatic slide when hover
+  $('#slider-wrap').hover(
+    function(){ $(this).addClass('active'); clearInterval(autoSlider); }, 
+    function(){ $(this).removeClass('active'); autoSlider = setInterval(slideRight, 5000); }
+  );
+  
+  
+
+});//DOCUMENT READY
+  
+
+
+/***********
+ SLIDE LEFT
+************/
+function slideLeft(){
+  pos--;
+  if(pos==-1){ pos = totalSlides-1; }
+  $('#slider-wrap ul#slider').css('left', -(sliderWidth*pos));  
+  
+  //*> optional
+  countSlides();
+  pagination();
+}
+
+
+/************
+ SLIDE RIGHT
+*************/
+function slideRight(){
+  pos++;
+  if(pos==totalSlides){ pos = 0; }
+  $('#slider-wrap ul#slider').css('left', -(sliderWidth*pos)); 
+  
+  //*> optional 
+  countSlides();
+  pagination();
+}
+
+
+
+  
+/************************
+ //*> OPTIONAL SETTINGS
+************************/
+function countSlides(){
+  $('#counter').html(pos+1 + ' / ' + totalSlides);
+}
+
+function pagination(){
+  $('#pagination-wrap ul li').removeClass('active');
+  $('#pagination-wrap ul li:eq('+pos+')').addClass('active');
+}
     /*stat*/
     function revert() {
       $('.article-stat__menu > *').css('background-color', '');
