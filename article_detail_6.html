@@ -69,31 +69,71 @@
 
 		<main class="flex-grow-1">
 			<section class="title-bar con-min-width">
-				<h1 class="con"><i class="fas fa-pencil-alt"></i> <span>STUDY LIST</span></h1>
-			</section><section class="section-1 con-min-width">
-	<div class="con article-list-box bg-white bd-body-box bd-box">
-		<div class="article-list">
-			<header>
-				<div class="flex">
-					<div class="article-list__cell-id">번호</div>
-					<div class="article-list__cell-reg-date">날짜</div>
-					<div class="article-list__cell-writer">작성자</div>
-					<div class="article-list__cell-title">제목</div>
-					<div class="article-list__cell-hit">조회수</div>
-					<div class="article-list__cell-recommand">추천수</div>
-				</div>
-			</header>
-			<main>
-			<div class="flex"><div class="article-list__cell-id">9</div><div class="article-list__cell-reg-date">2020-12-22 22:45:46</div><div class="article-list__cell-writer">김유콩</div><div class="article-list__cell-title"><a href="article_detail_9.html"class="hover-underline">웹분석이란?</a></div><div class="article-list__cell-hit">0</div><div class="article-list__cell-recommand">0</div></div><div class="flex"><div class="article-list__cell-id">8</div><div class="article-list__cell-reg-date">2020-12-22 22:45:43</div><div class="article-list__cell-writer">김유콩</div><div class="article-list__cell-title"><a href="article_detail_8.html"class="hover-underline">구글 애널리틱스란?</a></div><div class="article-list__cell-hit">0</div><div class="article-list__cell-recommand">0</div></div><div class="flex"><div class="article-list__cell-id">7</div><div class="article-list__cell-reg-date">2020-12-22 22:45:40</div><div class="article-list__cell-writer">김유콩</div><div class="article-list__cell-title"><a href="article_detail_7.html"class="hover-underline">사이트맵이란?</a></div><div class="article-list__cell-hit">0</div><div class="article-list__cell-recommand">0</div></div><div class="flex"><div class="article-list__cell-id">6</div><div class="article-list__cell-reg-date">2020-12-22 22:45:37</div><div class="article-list__cell-writer">김유콩</div><div class="article-list__cell-title"><a href="article_detail_6.html"class="hover-underline">SQL 테이블 생성</a></div><div class="article-list__cell-hit">0</div><div class="article-list__cell-recommand">0</div></div><div class="flex"><div class="article-list__cell-id">3</div><div class="article-list__cell-reg-date">2020-12-17 19:08:41</div><div class="article-list__cell-writer">김유콩</div><div class="article-list__cell-title"><a href="article_detail_3.html"class="hover-underline">JAVA 입력하기</a></div><div class="article-list__cell-hit">0</div><div class="article-list__cell-recommand">0</div></div><div class="flex"><div class="article-list__cell-id">2</div><div class="article-list__cell-reg-date">2020-12-17 19:05:22</div><div class="article-list__cell-writer">김유콩</div><div class="article-list__cell-title"><a href="article_detail_2.html"class="hover-underline">JAVA 출력하기</a></div><div class="article-list__cell-hit">0</div><div class="article-list__cell-recommand">0</div></div>
-			</main>
-		</div>
-		<div class="article-page-menu">
-			<ul class="flex flex-jc-c">
-			<li><a href="article_list_study_1.html" class="flex flex-ai-c article-page-menu__link--selected ">1</a></li>
-			</ul>
-		</div>
-	</div>
-</section></main>
+				<h1 class="con"><i class="fas fa-file-alt"></i> <span>ARTICLE DETAIL</span></h1>
+			</section><!-- 하이라이트 라이브러리 추가, 토스트 UI 에디터에서 사용됨 -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.4.1/highlight.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.4.1/styles/default.min.css">
+
+<!-- 토스트 UI 에디터, 자바스크립트 코어 -->
+<script src="https://uicdn.toast.com/editor/latest/toastui-editor-all.min.js"></script>
+
+<!-- 코드 미러 라이브러리 추가, 토스트 UI 에디터에서 사용됨 -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.58.3/codemirror.min.css" />
+<!-- 토스트 UI 에디터, CSS 코어 -->
+<link rel="stylesheet" href="https://uicdn.toast.com/editor/latest/toastui-editor.min.css" />
+
+<!-- 토스트 UI 에디터, 신택스 하이라이트 플러그인 추가 -->
+<script src="https://uicdn.toast.com/editor-plugin-code-syntax-highlight/latest/toastui-editor-plugin-code-syntax-highlight.min.js"></script>
+
+<section class="article-detail-box con-min-width">
+    <div class="con article-detail bg-white bd-body-box bd-box">
+      <header>
+       <h1 class= "article-detail__title">SQL 테이블 생성</h1>
+          <div class="article-detail__info flex">
+            <div class="article-detail__cell-board-name">공부게시판</div>
+            <div class="article-detail__cell-writer">김유콩</div>
+            <div class="article-detail__cell-reg-date">2020-12-22 22:45:37</div>
+            <div class="count flex">
+              <div class="article-detail__cell-hit">조회수</div>0
+              <div class="article-detail__cell-recommand">추천수</div>0
+            </div>
+          </div>
+      </header>
+      <main class="article-detail__body min-height-45vh"># SQL) 테이블 생성하기
+
+sql 예시
+```sql
+CREATE TABLE 테이블명(
+    컬럼명 dataType [defult 형식],
+        . . .
+    컬럼명 dataType [defult 형식];
+)
+```
+      </main>
+      <div class="article-detail__bottom flex flex-jc-e">
+       <a href="article_list_study_1.html" class="hover-underline">목록</a>
+          <a title="JAVA 입력하기" href="article_detail_3.html" class="hover-underline ">&lt; 이전글</a>
+          <a title="사이트맵이란?" href="article_detail_7.html" class="hover-underline ">다음글 &gt;</a>
+      </div>
+      <div class="article-detail__reply-box">
+          <div id="disqus_thread"></div>
+          <script>
+                (function() { // DON'T EDIT BELOW THIS LINE
+                var d = document, s = d.createElement('script');
+                s.src = 'https://cong-ssg.disqus.com/embed.js';
+                s.setAttribute('data-timestamp', +new Date());
+                (d.head || d.body).appendChild(s);
+                })();
+          </script>
+          <noscript>
+             Please enable JavaScript to view the 
+             <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+          </noscript>
+      </div>
+    </div>
+  </section>
+  
+  </main>
 
 <footer class="bottom-bar con-min-width">
 	<div class="con flex flex-ai-c flex-jc-c">
