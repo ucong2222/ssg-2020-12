@@ -11,6 +11,9 @@
   gtag('config', 'G-T12SXYKS5H');
 </script>
 
+<!-- 제이쿼리 불러오기 -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -49,6 +52,8 @@
 					<ul class="flex">
 						<li><a href="index.html" class="block text-align-center"><i
 								class="fas fa-home"></i> <span>HOME</span></a></li>
+						<li><a href="article_search.html" class="block text-align-center"><i
+								class="fas fa-search"></i> <span>SEARCH</span></a></li>
 						<li><a class="block text-align-center"><i
 								class="fas fa-list"></i> <span>ARTICLE</span></a>
 							<ul><li><a href="article_list_study_1.html" class="block text-align-center"><i class="fas fa-pencil-alt"></i> <span>STUDY LIST</span></a></li><li><a href="article_list_daily_1.html" class="block text-align-center"><i class="fab fa-dailymotion"></i> <span>DAILY LIST</span></a></li><li><a href="article_list_notice_1.html" class="block text-align-center"><i class="fas fa-flag"></i> <span>NOTICE LIST</span></a></li>
@@ -107,10 +112,10 @@
             </div>
           </div>
       </header>
-      <main class="article-detail__body min-height-45vh">오늘은 대면수업이라 아침일찍일어나 준비하고 밖을 나갔는데 날씨 왜이렇게 추운거야😖
+      <div class="main article-detail__body min-height-45vh">오늘은 대면수업이라 아침일찍일어나 준비하고 밖을 나갔는데 날씨 왜이렇게 추운거야😖
 안그래도 아침에 나가기 싫은데 추우면 더 나가기 싫엉~~
 근데 눈은 펑펑 내렸으면 좋겠다 ㅎㅎ❤ 
-      </main>
+      </div>
       <div class="article-detail__bottom flex flex-jc-e">
        <a href="article_list_daily_1.html" class="hover-underline">목록</a>
           <a title="오늘의 저녁 is 핏zza🍕" href="article_detail_4.html" class="hover-underline ">&lt; 이전글</a>
@@ -153,7 +158,6 @@
 
 <script src="app.js"></script>
 <script src='https://unpkg.com/magic-snowflakes/dist/snowflakes.min.js'></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> 
 
 <script>
     var sf = new Snowflakes({

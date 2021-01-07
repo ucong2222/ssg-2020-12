@@ -17,7 +17,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
-<title>SQL 테이블 생성 | Heycong | ARTICLE DETAIL</title>
+<title>Heycong | ARTICLE SEARCH</title>
 <link rel="stylesheet" href="app.css" />
 
 <!-- 폰트 -->
@@ -81,76 +81,50 @@
 
 		<main class="flex-grow-1">
 			<section class="title-bar con-min-width">
-				<h1 class="con"><i class="fas fa-file-alt"></i> <span>ARTICLE DETAIL</span></h1>
-			</section><!-- 하이라이트 라이브러리 추가, 토스트 UI 에디터에서 사용됨 -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.4.1/highlight.min.js"></script>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.4.1/styles/default.min.css">
+				<h1 class="con"><i class="fas fa-search"></i> <span>ARTICLE SEARCH</span></h1>
+			</section><!-- lodash 불러오기 -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.20/lodash.min.js"></script>
+<!-- vue 불러오기 -->
+<script src="https://cdn.jsdelivr.net/npm/vue"></script>
 
-<!-- 토스트 UI 에디터, 자바스크립트 코어 -->
-<script src="https://uicdn.toast.com/editor/latest/toastui-editor-all.min.js"></script>
+<section class="section-1 con-min-width" id="article-list-wrap">
+	<div class="con article-list-box bg-white bd-body-box bd-box">
+		<div class="article-search">
+			<form class="block">
+				<input @input="searchKeywordInputed" v-model="searchKeyword"
+					type="text" placeholder="검색어">
+			</form>
+		</div>
+		<div class="article-list">
+			<header>
+				<div class="flex">
+					<div class="article-list__cell-id">번호</div>
+					<div class="article-list__cell-reg-date">날짜</div>
+					<div class="article-list__cell-writer">작성자</div>
+					<div class="article-list__cell-title">제목</div>
+					<div class="article-list__cell-hit">조회수</div>
+					<div class="article-list__cell-recommand">추천수</div>
+				</div>
+			</header>
+			<div class="main">
+				<div class="flex" v-for="article in filterd">
+					<div class="article-list__cell-id">{{article.id}}</div>
+					<div class="article-list__cell-reg-date">{{article.regDate}}</div>
+					<div class="article-list__cell-writer">{{article.writer}}</div>
+					<div class="article-list__cell-title">
+						<a :href="'article_detail_'+article.id+'.html'" target="_blank"
+							class="hover-underline">{{article.title}}</a>
+					</div>
+					<div class="article-list__cell-hit">{{article.hit_count}}</div>
+					<div class="article-list__cell-recommand">{{article.likes_count}}</div>
+				</div>
 
-<!-- 코드 미러 라이브러리 추가, 토스트 UI 에디터에서 사용됨 -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.58.3/codemirror.min.css" />
-<!-- 토스트 UI 에디터, CSS 코어 -->
-<link rel="stylesheet" href="https://uicdn.toast.com/editor/latest/toastui-editor.min.css" />
+			</div>
+		</div>
+	</div>
+</section>
 
-<!-- 토스트 UI 에디터, 신택스 하이라이트 플러그인 추가 -->
-<script src="https://uicdn.toast.com/editor-plugin-code-syntax-highlight/latest/toastui-editor-plugin-code-syntax-highlight.min.js"></script>
-
-<section class="article-detail-box con-min-width">
-    <div class="con article-detail bg-white bd-body-box bd-box">
-      <header>
-       <h1 class= "article-detail__title">SQL 테이블 생성</h1>
-          <div class="article-detail__info flex">
-            <div class="article-detail__cell-board-name">공부게시판</div>
-            <div class="article-detail__cell-writer">김유콩</div>
-            <div class="article-detail__cell-reg-date">2020-12-22 22:45:37</div>
-            <div class="count flex">
-              <div class="article-detail__cell-hit">조회수</div>0
-              <div class="article-detail__cell-recommand">추천수</div>0
-              <div class="article-detail__cell-recommand">댓글수</div>0
-            </div>
-          </div>
-      </header>
-      <div class="main article-detail__body min-height-45vh"># SQL) 테이블 생성하기
-
-sql 예시
-```sql
-CREATE TABLE 테이블명(
-    컬럼명 dataType [defult 형식],
-        . . .
-    컬럼명 dataType [defult 형식];
-)
-```
-      </div>
-      <div class="article-detail__bottom flex flex-jc-e">
-       <a href="article_list_study_1.html" class="hover-underline">목록</a>
-          <a title="JAVA 입력하기" href="article_detail_3.html" class="hover-underline ">&lt; 이전글</a>
-          <a title="사이트맵이란?" href="article_detail_7.html" class="hover-underline ">다음글 &gt;</a>
-      </div>
-      <div class="article-detail__reply-box">
-          <div id="disqus_thread"></div>
-          <script>
-          		var disqus_config = function () {
-		        this.page.url = 'https://blog.heycong.com/article_detail_6.html';
-		        this.page.identifier = 'article_detail_6.html';
-		    	};
-                (function() { // DON'T EDIT BELOW THIS LINE
-                var d = document, s = d.createElement('script');
-                s.src = 'https://cong-ssg.disqus.com/embed.js';
-                s.setAttribute('data-timestamp', +new Date());
-                (d.head || d.body).appendChild(s);
-                })();
-          </script>
-          <noscript>
-             Please enable JavaScript to view the 
-             <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
-          </noscript>
-      </div>
-    </div>
-  </section>
-  
-  </main>
+<script src="article_search.js"></script></main>
 
 <footer class="bottom-bar con-min-width">
 	<div class="con flex flex-ai-c flex-jc-c">

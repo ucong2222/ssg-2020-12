@@ -11,6 +11,9 @@
   gtag('config', 'G-T12SXYKS5H');
 </script>
 
+<!-- 제이쿼리 불러오기 -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -49,6 +52,8 @@
 					<ul class="flex">
 						<li><a href="index.html" class="block text-align-center"><i
 								class="fas fa-home"></i> <span>HOME</span></a></li>
+						<li><a href="article_search.html" class="block text-align-center"><i
+								class="fas fa-search"></i> <span>SEARCH</span></a></li>
 						<li><a class="block text-align-center"><i
 								class="fas fa-list"></i> <span>ARTICLE</span></a>
 							<ul><li><a href="article_list_study_1.html" class="block text-align-center"><i class="fas fa-pencil-alt"></i> <span>STUDY LIST</span></a></li><li><a href="article_list_daily_1.html" class="block text-align-center"><i class="fab fa-dailymotion"></i> <span>DAILY LIST</span></a></li><li><a href="article_list_notice_1.html" class="block text-align-center"><i class="fas fa-flag"></i> <span>NOTICE LIST</span></a></li>
@@ -107,9 +112,9 @@
             </div>
           </div>
       </header>
-      <main class="article-detail__body min-height-45vh"># 사이트맵이란?
+      <div class="main article-detail__body min-height-45vh"># 사이트맵이란?
 - 사이트맵 파일을 만들고 각각의 포털사이트나 검색 엔진에 업로드 시켜주면 내 블로그나 홈페이지의 목차를 제공
-      </main>
+      </div>
       <div class="article-detail__bottom flex flex-jc-e">
        <a href="article_list_study_1.html" class="hover-underline">목록</a>
           <a title="SQL 테이블 생성" href="article_detail_6.html" class="hover-underline ">&lt; 이전글</a>
@@ -152,7 +157,6 @@
 
 <script src="app.js"></script>
 <script src='https://unpkg.com/magic-snowflakes/dist/snowflakes.min.js'></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> 
 
 <script>
     var sf = new Snowflakes({
