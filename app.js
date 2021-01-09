@@ -11,7 +11,7 @@ function ArticleDetail__Body__init() {
 		el: body,
 		initialValue: initialValue,
 		viewer: true,
-		plugins: [toastui.Editor.plugin.codeSyntaxHighlight]
+		plugins: [toastui.Editor.plugin.codeSyntaxHighlight,youtubePlugin]
 	});
 
 	// 유튜브 플러그인 시작
