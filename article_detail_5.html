@@ -14,8 +14,30 @@
 <!-- 제이쿼리 불러오기 -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
+<!-- 하이라이트 라이브러리 추가, 토스트 UI 에디터에서 사용됨 -->
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.4.1/highlight.min.js"></script>
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.4.1/styles/default.min.css">
+
+<!-- 토스트 UI 에디터, 자바스크립트 코어 -->
+<script
+	src="https://uicdn.toast.com/editor/latest/toastui-editor-all.min.js" defer></script>
+
+<!-- 코드 미러 라이브러리 추가, 토스트 UI 에디터에서 사용됨 -->
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.58.3/codemirror.min.css" />
+<!-- 토스트 UI 에디터, CSS 코어 -->
+<link rel="stylesheet"
+	href="https://uicdn.toast.com/editor/latest/toastui-editor.min.css" />
+
+<!-- 토스트 UI 에디터, 신택스 하이라이트 플러그인 추가 -->
+<script
+	src="https://uicdn.toast.com/editor-plugin-code-syntax-highlight/latest/toastui-editor-plugin-code-syntax-highlight.min.js" defer></script>
+	
 <title>날씨가 춥군🥶 | Heycong | ARTICLE DETAIL</title>
 <link rel="stylesheet" href="app.css" />
+<script src="app.js" defer></script>
 
 <!-- 폰트 -->
 <link rel="stylesheet"
@@ -36,8 +58,8 @@
 <meta name="title" content="HeyCong" />
 <meta name="keywords" content="HTML, CSS, JAVASCRIPT, JAVA, SPRING, MySQL, 리눅스, 리액트" />
 <meta name="copyright" content="HeyCong" />
-<meta name="pubdate" content="2021-01-13T09:18:09" />
-<meta name="lastmod" content="2021-01-13T09:18:09" />
+<meta name="pubdate" content="2021-01-17T19:36:10" />
+<meta name="lastmod" content="2021-01-17T19:36:10" />
 <!-- 오픈그래프 적용 -->
 <meta property="og:site_name" content="HeyCong" />
 <meta property="og:type" content="website" />
@@ -46,12 +68,12 @@
 안그래도 아침에 나가기 싫은데 추우면 더 나가기 싫엉
 근데 눈은 펑펑 내렸으면 좋겠다  " />
 <meta property="og:locale" content="ko_KR" />
-<meta property="og:image" content="/img/logo/logo_opengraph.png" />
+<meta property="og:image" content="https://blog.heycong.com/img/logo/logo_opengraph.png" />
 <meta property="og:image:alt" content="blog.heycong.com" />
 <meta property="og:image:width" content="486" />
 <meta property="og:image:height" content="254" />
-<meta property="og:updated_time" content="2021-01-13T09:18:09"/>
-<meta property="og:pubdate" content="2021-01-13T09:18:09" />
+<meta property="og:updated_time" content="2021-01-17T19:36:10"/>
+<meta property="og:pubdate" content="2021-01-17T19:36:10" />
 <meta property="og:url" content="https://blog.heycong.com" />
 <!-- TWITTER -->
 <meta name="twitter:card" content="summary_large_image" />
@@ -119,22 +141,7 @@
 		<main class="flex-grow-1">
 			<section class="title-bar con-min-width">
 				<h1 class="con"><i class="fas fa-file-alt"></i> <span>ARTICLE DETAIL</span></h1>
-			</section><!-- 하이라이트 라이브러리 추가, 토스트 UI 에디터에서 사용됨 -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.4.1/highlight.min.js"></script>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.4.1/styles/default.min.css">
-
-<!-- 토스트 UI 에디터, 자바스크립트 코어 -->
-<script src="https://uicdn.toast.com/editor/latest/toastui-editor-all.min.js"></script>
-
-<!-- 코드 미러 라이브러리 추가, 토스트 UI 에디터에서 사용됨 -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.58.3/codemirror.min.css" />
-<!-- 토스트 UI 에디터, CSS 코어 -->
-<link rel="stylesheet" href="https://uicdn.toast.com/editor/latest/toastui-editor.min.css" />
-
-<!-- 토스트 UI 에디터, 신택스 하이라이트 플러그인 추가 -->
-<script src="https://uicdn.toast.com/editor-plugin-code-syntax-highlight/latest/toastui-editor-plugin-code-syntax-highlight.min.js"></script>
-
-<section class="article-detail-box con-min-width">
+			</section><section class="article-detail-box con-min-width">
     <div class="con article-detail bg-white bd-body-box bd-box">
       <header>
        <h1 class= "article-detail__title">날씨가 춥군🥶</h1>
@@ -196,7 +203,6 @@
 
 </div>
 
-<script src="app.js"></script>
 <script src='https://unpkg.com/magic-snowflakes/dist/snowflakes.min.js'></script>
 
 <script>
