@@ -475,6 +475,11 @@ a {
 .home-content__blog-info>div{
   padding:20px 40px;
 }
+
+.home-content__blog-info>div>span{
+  margin-top:20px;
+  line-height:25px;
+}
 /* 홈 - BLOG-info 끝*/
 
 /* 홈 - ABOUT 시작*/
@@ -861,6 +866,7 @@ a {
 }
 .article-detail__list{
   padding:6px 0;
+  padding-right:10px;
   border:solid var(--blog-color-2) 2px;
   border-left:none;
   border-right:none;
