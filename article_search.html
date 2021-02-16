@@ -11,8 +11,17 @@
   gtag('config', 'G-T12SXYKS5H');
 </script>
 
+<!-- 반응형 필수 -->
+<meta name="viewport" content="width=device-width, user-scalable=no">
+
 <!-- 제이쿼리 불러오기 -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<!-- GSAP 라이브러리-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
+
+<!-- 스크롤트리거 -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/ScrollTrigger.min.js"></script>
 
 <!-- 하이라이트 라이브러리 추가, 토스트 UI 에디터에서 사용됨 -->
 <script
@@ -58,8 +67,8 @@
 <meta name="title" content="HeyCong" />
 <meta name="keywords" content="HTML, CSS, JAVASCRIPT, JAVA, SPRING, MySQL, 리눅스, 리액트" />
 <meta name="copyright" content="HeyCong" />
-<meta name="pubdate" content="2021-02-10T08:58:21" />
-<meta name="lastmod" content="2021-02-10T08:58:21" />
+<meta name="pubdate" content="2021-02-16T15:19:17" />
+<meta name="lastmod" content="2021-02-16T15:19:17" />
 <!-- 오픈그래프 적용 -->
 <meta property="og:site_name" content="HeyCong" />
 <meta property="og:type" content="website" />
@@ -70,8 +79,8 @@
 <meta property="og:image:alt" content="blog.heycong.com" />
 <meta property="og:image:width" content="486" />
 <meta property="og:image:height" content="254" />
-<meta property="og:updated_time" content="2021-02-10T08:58:21"/>
-<meta property="og:pubdate" content="2021-02-10T08:58:21" />
+<meta property="og:updated_time" content="2021-02-16T15:19:17"/>
+<meta property="og:pubdate" content="2021-02-16T15:19:17" />
 <meta property="og:url" content="https://blog.heycong.com" />
 <!-- TWITTER -->
 <meta name="twitter:card" content="summary_large_image" />
@@ -89,293 +98,166 @@
 </head>
 
 <body>
-	<div class="body-content min-height-100vh flex flex-column bg-body">
-
-		<header class="logo-bar con-min-width">
-			<div class="con height-100p flex flex-jc-c">
-				<a href="index.html" class="logo flex flex-ai-c">
-				<img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FEISZT%2FbtqQUYSjRn6%2FCKXcq6dQxJr8vgEls9qJ21%2Fimg.png" alt="">
-				</a>
-			</div>
+	<div class="min-height-100vh flex flex-di-c">
+		<!-- 모바일 탑바 시작-->
+		<header class="mobile-top-bar visible-sm-down flex">
+		  <div class="flex-1-0-0 flex flex-ai-c">
+		    <div class="mobile-top-bar__btn-toggle-side-bar flex-as-c">
+		      <div></div>
+		      <div></div>
+		      <div></div>
+		    </div>
+		  </div>
+		  <div>
+		    <a href="index.html" class="mobile-logo"><img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FbL9fDG%2FbtqWUMFuoNa%2Ffxy7WqGkjwKYuTkaVybark%2Fimg.png" alt=""></a>
+		  </div>
+		  <div class="mobile-search-box flex-1-0-0 flex flex-ai-c flex-jc-e">
+		    <a href="article_search.html"><i class="fas fa-search"></i></a>
+		  </div>
 		</header>
+		<!-- 모바일 탑바 끝-->
+		
+		<!-- 모바일 사이드 바 시작-->
+		<aside class="mobile-side-bar visible-sm-down">
+		  <nav class="mobile-side-bar__menu-box-1">
+		    <ul>
+		      <li><a href="index.html" class="block">HOME</a></li>
+		      <li><a href="about.html" class="block">ABOUT</a></li>
+		      <li><a class="flex flex-ai-c"><span>STUDY</span><i class="fas fa-chevron-right"></i></a>
+		        <ul>
+		          <li><a href="article_list_java_1.html" class="block"><span>JAVA</span></a></li><li><a href="article_list_mysql_1.html" class="block"><span>MYSQL</span></a></li><li><a href="article_list_publishing_1.html" class="block"><span>HTML/CSS</span></a></li><li><a href="article_list_devlog_1.html" class="block"><span>개발일지</span></a></li>
+		        </ul>
+		      </li>
+		      <li><a class="flex flex-ai-c"><span>LINK</span><i class="fas fa-chevron-right"></i></i></a>
+		        <ul>
+		          <li><a href="https://github.com/ucong2222" class="block"><span>GITHUB</span></a></li>
+		          <li><a href="https://ucong-9796.tistory.com" class="block"><span>TISTORY</span></a></li>
+		          <li><a href="https://www.youtube.com/channel/UCmDEtsefnMXJTE70BrM0TPg/videos" class="block"><span>YOUTUBE</span></a></li>
+		          <li><a href="https://www.instagram.com/u_cong_97" class="block"><span>INSTAGRAM</span></a></li>
+		          <li><a href="https://www.facebook.com/profile.php?id=100005670960964" class="block"><span>FACEBOOK</span></a></li>
+		        </ul>
+		      </li>
+		      <li><a href="stat.html" class="block"><span>STATISTICS</span></a></li>
+		    </ul>
+		  </nav>
+		</aside>
+		<!-- 모바일 사이드 바 끝-->
 
-		<header class="menu-bar con-min-width">
-			<div class="con">
-				<nav class="menu-bar__menu-1 ">
-					<ul class="flex">
-						<li><a href="index.html" class="block text-align-center"><i
-								class="fas fa-home"></i> <span>HOME</span></a></li>
-						<li><a href="article_search.html" class="block text-align-center"><i
-								class="fas fa-search"></i> <span>SEARCH</span></a></li>
-						<li><a class="block text-align-center"><i
-								class="fas fa-list"></i> <span>ARTICLE</span></a>
-							<ul><li><a href="article_list_study_1.html" class="block text-align-center"><i class="fas fa-pencil-alt"></i> <span>STUDY LIST</span></a></li><li><a href="article_list_daily_1.html" class="block text-align-center"><i class="fab fa-dailymotion"></i> <span>DAILY LIST</span></a></li><li><a href="article_list_notice_1.html" class="block text-align-center"><i class="fas fa-flag"></i> <span>NOTICE LIST</span></a></li>
-							</ul></li>
-						<li><a class="block text-align-center"><i
-								class="fas fa-link"></i> <span>LINK</span></a>
-						<ul>
-								<li><a href="https://ucong-9796.tistory.com/" target="_blank"
-									class="block text-align-center"><i class="fab fa-blogger-b"></i>
-										<span>BLOG</span></a></li>
-								<li><a href="https://github.com/ucong2222" target="_blank"
-									class="block text-align-center"><i class="fab fa-github"></i>
-										<span>GITHUB</span></a></li>
-								<li><a href="https://www.youtube.com/channel/UCmDEtsefnMXJTE70BrM0TPg/videos?view_as=subscriber" target="_blank"
-									class="block text-align-center"><i class="fab fa-youtube"></i>
-										<span>YOUTUBE</span></a></li>
-							</ul></li>
-						<li><a href="stat.html" class="block text-align-center"><i
-								class="fas fa-chart-pie"></i> <span>STATISTICS</span></a></li>
-					</ul>
-				</nav>
-			</div>
+		<!-- 로고바 시작 -->
+		<header class="logo-bar con-min-width visible-md-up">
+		  <div class="con height-100p flex flex-jc-c">
+		    <a href="#" class="logo flex flex-ai-c">
+		      <img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FbL9fDG%2FbtqWUMFuoNa%2Ffxy7WqGkjwKYuTkaVybark%2Fimg.png" alt="">
+		    </a>
+		  </div>
 		</header>
+		<!-- 로고바 끝 -->
+		<!-- 탑바 시작 -->
+		<header class="top-bar con-min-width visible-md-up">
+		  <div class="con height-100p flex flex-jc-sb">
+		    <nav class="top-bar__menu-box-1">
+		      <ul class="flex">
+		        <li><a href="index.html" class="block"><span>Home</span></a></li>
+		        <li><a href="about.html" class="block"><span>About</span></a></li>
+		        <li><a class="flex flex-ai-c"><span>Study</span><i class="fas fa-angle-down"></i></a>
+		          <ul>
+		            <li><a href="article_list_java_1.html" class="block"><span>JAVA</span></a></li><li><a href="article_list_mysql_1.html" class="block"><span>MYSQL</span></a></li><li><a href="article_list_publishing_1.html" class="block"><span>HTML/CSS</span></a></li><li><a href="article_list_devlog_1.html" class="block"><span>개발일지</span></a></li>
+		          </ul>
+		        </li>
+		        <li><a class="flex flex-ai-c"><span>Link</span><i class="fas fa-angle-down"></i></a>
+		          <ul>
+		            <li><a href="https://github.com/ucong2222" class="block"><span>GITHUB</span></a></li>
+		            <li><a href="https://ucong-9796.tistory.com" class="block"><span>TISTORY</span></a></li>
+		            <li><a href="https://www.youtube.com/channel/UCmDEtsefnMXJTE70BrM0TPg/videos" class="block"><span>YOUTUBE</span></a></li>
+		            <li><a href="https://www.instagram.com/u_cong_97" class="block"><span>INSTAGRAM</span></a></li>
+		            <li><a href="https://www.facebook.com/profile.php?id=100005670960964" class="block"><span>FACEBOOK</span></a></li>
+		          </ul>
+		        </li>
+		        <li><a href="stat.html" class="block"><span>Statistics</span></a></li>
+		      </ul>
+		    </nav>
+		    <div class="top-bar__search-box">
+		      <div class="height-100p flex flex-jc-c flex-ai-c">
+		        <a href="article_search.html"><i class="fas fa-search"></i></a>
+		      </div>
+		    </div>
+		  </div>
+		</header>
+		
+		<!-- 탑바 끝 -->
 
 
-		<main class="flex-grow-1">
-			<section class="title-bar con-min-width">
-				<h1 class="con"><i class="fas fa-search"></i> <span>ARTICLE SEARCH</span></h1>
-			</section><!-- lodash 불러오기 -->
+		<main class="flex-grow-1"><!-- lodash 불러오기 -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.20/lodash.min.js"></script>
 <!-- vue 불러오기 -->
 <!-- 개발버전, 도움되는 콘솔 경고를 포함. -->
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 
-<section class="section-1 con-min-width" id="article-list-wrap" v-cloak>
-	<div class="con article-list-box bg-white bd-body-box bd-box">
-		<div class="article-search">
-			<form class="block">
-				<input @input="searchKeywordInputed" v-model="searchKeyword"
-					type="text" placeholder="검색어">
-			</form>
-		</div>
-		<div class="article-list">
-			<header>
-				<div class="flex">
-					<div class="article-list__cell-id">번호</div>
-					<div class="article-list__cell-reg-date">날짜</div>
-					<div class="article-list__cell-writer">작성자</div>
-					<div class="article-list__cell-title">제목</div>
-					<div class="article-list__cell-hit">조회수</div>
-					<div class="article-list__cell-recommand">추천수</div>
-				</div>
-			</header>
-			<div class="main">
-				<div class="flex" v-for="article in filterd">
-					<div class="article-list__cell-id">{{article.id}}</div>
-					<div class="article-list__cell-reg-date">{{article.regDate}}</div>
-					<div class="article-list__cell-writer">{{article.writer}}</div>
-					<div class="article-list__cell-title">
-						<a :href="'article_detail_'+article.id+'.html'" target="_blank"
-							class="hover-underline">{{article.title}}</a>
-					</div>
-					<div class="article-list__cell-hit">{{article.hit_count}}</div>
-					<div class="article-list__cell-recommand">{{article.likes_count}}</div>
-				</div>
 
-			</div>
-		</div>
+   <div class="con-min-width" id="article-list-wrap">
+      <h4 class="con title-bar search__title-bar flex">
+        <span>SEARCH / 전체글</span>
+        <span>25</span>
+        <div class="search-box">
+          <form class="block">
+            <input @input="searchKeywordInputed" v-model="searchKeyword" type="text" placeholder="검색어">
+          </form>
+        </div>
+      </h4>
+      <div class="con search-list-box">
+        <div class="search-list search-list-pc visible-md-up">
+          <header>
+            <div class="flex">
+              <div class="search-list__cell-id">번호</div>
+              <div class="search-list__cell-reg-date">날짜</div>
+              <div class="search-list__cell-writer">작성자</div>
+              <div class="search-list__cell-title">제목</div>
+              <div class="search-list__cell-hit">조회수</div>
+              <div class="search-list__cell-recommand">추천수</div>
+            </div>
+          </header>
+          <div class="main">
+            <div class="flex" v-for="article in filterd">
+              <div class="search-list__cell-id">{{article.id}}</div>
+              <div class="search-list__cell-reg-date">{{article.regDate}}</div>
+              <div class="search-list__cell-writer">{{article.writer}}</div>
+              <div class="search-list__cell-title"><a :href="'article_'+article.id+'.html'" target="_blank" class="hover-underline">{{article.title}}</a></div>
+              <div class="search-list__cell-hit">{{article.hit_count}}</div>
+              <div class="search-list__cell-recommand">{{article.likes_count}}</div>
+            </div>
+          </div>
+        </div>
+        <div class="search-list search-list-mobile visible-sm-down">
+          <div class="main">
+            <div v-for="article in filterd">
+              <div class="flex">
+                <div class="search-list__cell-id-mobile">{{article.id}}</div>
+                <div class="search-list__cell-title-mobile"><a :href="'article_'+article.id+'.html'" target="_blank" class="hover-underline">{{article.title}}</a></div>
+              </div>
+              <div class="flex">
+                <div class="search-list__cell-writer-mobile">{{article.writer}}</div>
+                <span>ㆍ</span>
+                <div class="search-list__cell-reg-date-mobile">{{article.regDate}}</div>
+              </div>
+              <div class="flex">
+                <div class="search-list__cell-hit-mobile"><i class="far fa-eye"></i> {{article.hit_count}}</div>
+                <div class="search-list__cell-recommand-mobile"><i class="far fa-heart"></i> {{article.likes_count}}</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+<script src="article_search.js"></script>		</main>
+		
+		<!-- 하단바 시작 -->
+		<footer class="bottom-bar con-min-width">
+		  <div class="con height-100p flex flex-ai-c flex-jc-c">
+		    <div class="bottom-bar__site-info">COPYRIGHT Ⓒ 2020. UCONG. ALL RIGHTS RESERVED.</div>
+		  </div>
+		</footer>
+		<!-- 하단바 끝 -->
 	</div>
-</section>
-
-<script src="article_search.js"></script></main>
-
-<footer class="bottom-bar con-min-width">
-	<div class="con flex flex-ai-c flex-jc-c">
-		<a href="index_1.html" class="logo logo-mini flex flex-ai-c">
-		<img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FEISZT%2FbtqQUYSjRn6%2FCKXcq6dQxJr8vgEls9qJ21%2Fimg.png" alt="">
-		</a>
-		 <div class="bottom-bar__site-info">copyright ⓒ 2020. ucong. all rights reserved.</div>
-	</div>
-</footer>
-
-</div>
-
-<script src='https://unpkg.com/magic-snowflakes/dist/snowflakes.min.js'></script>
-
-<script>
-    var sf = new Snowflakes({
-        color: "#ffffff", // 색상
-        count: 75, // 갯수
-        minOpacity: 0.2, // 최소 투명도 0: 투명 | 1: 불투명
-        maxOpacity: 0.6 // 최대 투명도
-    });
-   	/*home.index*/
-   	//current position
-var pos = 0;
-//number of slides
-var totalSlides = $('#slider-wrap ul li').length;
-//get the slide width
-var sliderWidth = $('#slider-wrap').width();
-
-
-$(document).ready(function(){
-  
-  
-  /*****************
-   BUILD THE SLIDER
-  *****************/
-  //set width to be 'x' times the number of slides
-  $('#slider-wrap ul#slider').width(sliderWidth*totalSlides);
-  
-    //next slide  
-  $('#next').click(function(){
-    slideRight();
-  });
-  
-  //previous slide
-  $('#previous').click(function(){
-    slideLeft();
-  });
-  
-  
-  
-  /*************************
-   //*> OPTIONAL SETTINGS
-  ************************/
-  //automatic slider
-  var autoSlider = setInterval(slideRight, 4000);
-  
-  //for each slide 
-  $.each($('#slider-wrap ul li'), function() { 
-
-     //create a pagination
-     var li = document.createElement('li');
-     $('#pagination-wrap ul').append(li);    
-  });
-  
-  //counter
-  countSlides();
-  
-  //pagination
-  pagination();
-  
-  //hide/show controls/btns when hover
-  //pause automatic slide when hover
-  $('#slider-wrap').hover(
-    function(){ $(this).addClass('active'); clearInterval(autoSlider); }, 
-    function(){ $(this).removeClass('active'); autoSlider = setInterval(slideRight, 4000); }
-  );
-  
-  
-
-});//DOCUMENT READY
-  
-
-
-/***********
- SLIDE LEFT
-************/
-function slideLeft(){
-  pos--;
-  if(pos==-1){ pos = totalSlides-1; }
-  $('#slider-wrap ul#slider').css('left', -(sliderWidth*pos));  
-  
-  //*> optional
-  countSlides();
-  pagination();
-}
-
-
-/************
- SLIDE RIGHT
-*************/
-function slideRight(){
-  pos++;
-  if(pos==totalSlides){ pos = 0; }
-  $('#slider-wrap ul#slider').css('left', -(sliderWidth*pos)); 
-  
-  //*> optional 
-  countSlides();
-  pagination();
-}
-
-
-
-  
-/************************
- //*> OPTIONAL SETTINGS
-************************/
-function countSlides(){
-  $('#counter').html(pos+1 + ' / ' + totalSlides);
-}
-
-function pagination(){
-  $('#pagination-wrap ul li').removeClass('active');
-  $('#pagination-wrap ul li:eq('+pos+')').addClass('active');
-}
-
-/*stat*/
-    function revert() {
-      $('.article-stat__menu > *').css('background-color', '');
-      $('.article-stat__menu > *').css('font-size', '');
-      $('.article-stat__menu > *').css('width', '');
-      $('.article-stat__menu > *').css('color', '');
-      $('.article-stat__content').css('display', 'none');
-      $('.article-stat__content > *').css('display', 'none');
-      $('.article-stat__info').css('display', 'none');
-      
-    }
-
-
-    $('.article-stat__menu-totalMembersCount').click(function() {
-      revert();
-     
-      $('.article-stat__menu-totalMembersCount').css('background-color', '#d9534f');
-      $('.article-stat__menu-totalMembersCount').css('font-size', '1.4rem');
-      $('.article-stat__menu-totalMembersCount').css('width', '400px');
-      $('.article-stat__menu-totalMembersCount').css('color', 'white');
-      $('.article-stat__content').css('display', 'flex');
-      $('.article-stat__content-totalMembersCount').css('display', 'flex');
-    });
-
-    $('.article-stat__menu-totalArticlesCount').click(function() {
-      revert();
-      
-      $('.article-stat__menu-totalArticlesCount').css('background-color', '#d9534f');
-      $('.article-stat__menu-totalArticlesCount').css('font-size', '1.4rem');
-      $('.article-stat__menu-totalArticlesCount').css('width', '450px');
-      $('.article-stat__menu-totalArticlesCount').css('color', 'white');
-       $('.article-stat__content-totalArticlesCount').css('display', 'flex');
-      $('.article-stat__content').css('display', 'flex');
-    });
-
-    $('.article-stat__menu-totalArticlesHit').click(function() {
-      revert();
-      
-      $('.article-stat__menu-totalArticlesHit').css('background-color', '#d9534f');
-      $('.article-stat__menu-totalArticlesHit').css('font-size', '1.4rem');
-      $('.article-stat__menu-totalArticlesHit').css('width', '450px');
-      $('.article-stat__menu-totalArticlesHit').css('color', 'white');
-       $('.article-stat__content-totalArticlesHit').css('display', 'flex');
-      $('.article-stat__content').css('display', 'flex');
-    });
-
-    $('.article-stat__menu-boardArticlesCount').click(function() {
-      revert();
-      
-      $('.article-stat__menu-boardArticlesCount').css('background-color', '#d9534f');
-      $('.article-stat__menu-boardArticlesCount').css('font-size', '1.4rem');
-      $('.article-stat__menu-boardArticlesCount').css('width', '450px');
-      $('.article-stat__menu-boardArticlesCount').css('color', 'white');
-      $('.article-stat__content-boardArticlesCount').css('display', 'flex');
-      $('.article-stat__content').css('display', 'flex');
-
-    });
-
-    $('.article-stat__menu-boardArticlesHit').click(function() {
-      revert();
-      
-      $('.article-stat__menu-boardArticlesHit').css('background-color', '#d9534f');
-      $('.article-stat__menu-boardArticlesHit').css('font-size', '1.4rem');
-      $('.article-stat__menu-boardArticlesHit').css('width', '450px');
-      $('.article-stat__menu-boardArticlesHit').css('color', 'white');
-      $('.article-stat__content-boardArticlesHit').css('display', 'flex');
-    $('.article-stat__content').css('display', 'flex');
-    });
-</script>
-
-
-
 </body>
 </html>
