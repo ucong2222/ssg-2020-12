@@ -66,8 +66,8 @@
 <meta name="title" content="HeyCong" />
 <meta name="keywords" content="HTML, CSS, JAVASCRIPT, JAVA, SPRING, MySQL, 리눅스, 리액트" />
 <meta name="copyright" content="HeyCong" />
-<meta name="pubdate" content="2021-02-18T00:31:36" />
-<meta name="lastmod" content="2021-02-18T00:31:36" />
+<meta name="pubdate" content="2021-02-18T00:35:35" />
+<meta name="lastmod" content="2021-02-18T00:35:35" />
 <!-- 오픈그래프 적용 -->
 <meta property="og:site_name" content="HeyCong" />
 <meta property="og:type" content="website" />
@@ -78,8 +78,8 @@
 <meta property="og:image:alt" content="blog.heycong.com" />
 <meta property="og:image:width" content="486" />
 <meta property="og:image:height" content="254" />
-<meta property="og:updated_time" content="2021-02-18T00:31:36"/>
-<meta property="og:pubdate" content="2021-02-18T00:31:36" />
+<meta property="og:updated_time" content="2021-02-18T00:35:35"/>
+<meta property="og:pubdate" content="2021-02-18T00:35:35" />
 <meta property="og:url" content="https://blog.heycong.com" />
 <!-- TWITTER -->
 <meta name="twitter:card" content="summary_large_image" />
@@ -541,6 +541,28 @@ prevBtn.addEventListener("click", function () {
   } else {
     moveSlide(slideCount - 3);
   }
+});
+
+// 스크롤 트리거 플러그인 활성화
+gsap.registerPlugin(ScrollTrigger);
+
+const tl1 = gsap.timeline({
+  scrollTrigger: {
+    trigger: ".home-content__section-3",
+    start: "top 100%-=100",
+    end: "bottom 100%",
+    scrub: true
+  }
+});
+
+tl1.from(".home-content__about-box-1 > img:first-child", {
+  x: -500,
+  opacity: 0
+});
+
+tl1.from(".home-content__about-box-2 > img:last-child", {
+  x: 500,
+  opacity: 0
 });
 </script>
 <!-- 홈 끝 -->		</main>
