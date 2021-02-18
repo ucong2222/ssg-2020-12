@@ -66,8 +66,8 @@
 <meta name="title" content="HeyCong" />
 <meta name="keywords" content="HTML, CSS, JAVASCRIPT, JAVA, SPRING, MySQL, 리눅스, 리액트" />
 <meta name="copyright" content="HeyCong" />
-<meta name="pubdate" content="2021-02-18T00:35:37" />
-<meta name="lastmod" content="2021-02-18T00:35:37" />
+<meta name="pubdate" content="2021-02-18T09:26:26" />
+<meta name="lastmod" content="2021-02-18T09:26:26" />
 <!-- 오픈그래프 적용 -->
 <meta property="og:site_name" content="HeyCong" />
 <meta property="og:type" content="website" />
@@ -78,8 +78,8 @@
 <meta property="og:image:alt" content="blog.heycong.com" />
 <meta property="og:image:width" content="486" />
 <meta property="og:image:height" content="254" />
-<meta property="og:updated_time" content="2021-02-18T00:35:37"/>
-<meta property="og:pubdate" content="2021-02-18T00:35:37" />
+<meta property="og:updated_time" content="2021-02-18T09:26:26"/>
+<meta property="og:pubdate" content="2021-02-18T09:26:26" />
 <meta property="og:url" content="https://blog.heycong.com" />
 <!-- TWITTER -->
 <meta name="twitter:card" content="summary_large_image" />
@@ -188,13 +188,104 @@
 
 		<main class="flex-grow-1"><div class="con-min-width">
 	<h4 class="con title-bar">
-		<span>MYSQL / 전체글</span> <span>1</span>
+		<span>MYSQL / 전체글</span> <span>5</span>
 	</h4>
 </div>
 
 <div class="con-min-width">
 	<div class="con article-list-box">
-		<div class="article-list"><div><div class="article-list__cell-title"><a href="article_detail_6.html"class="hover-underline">SQL 테이블 생성</a></div><div class="article-list__cell-body"># SQL) 테이블 생성하기
+		<div class="article-list"><div><div class="article-list__cell-title"><a href="article_detail_28.html"class="hover-underline">한줄 글 말줄임(...) 표시</a></div><div class="article-list__cell-body"># 한줄 글 말줄임(...) 표시
+
+```codepen 
+https://codepen.io/ucong2222/embed/NWbjQJJ?height=265&theme-id=light&default-tab=css,result&editable=true
+```
+</div><div class="flex"><div class="article-list__cell-writer">김유콩</div><span>ㆍ</span><div class="article-list__cell-board-name"><a href="article_list_mysql_1.html">MYSQL</a></div><span>ㆍ</span><div class="article-list__cell-reg-date">2021-02-18 09:24:10</div></div><div class="flex"><div class="article-list__cell-hit"><i class="far fa-eye"></i> 0</div><div class="article-list__cell-like"><i class="far fa-heart"></i> 0</div><div class="article-list__cell-comment"><i class="far fa-comment-dots"></i> 0</div></div></div><div><div class="article-list__cell-title"><a href="article_detail_27.html"class="hover-underline">GSAP란?</a></div><div class="article-list__cell-body"># GSAP (The GreenSock Animation Platform )
+- 프론트엔드 개발자와 디자이너들이쉽게 사용할 수 있는 아주 강력한 타임라인기반의 애니메이션 **자바스크립트 라이브러리**
+
+## CDN 이용해 추가 방법
+```html
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
+```</div><div class="flex"><div class="article-list__cell-writer">김유콩</div><span>ㆍ</span><div class="article-list__cell-board-name"><a href="article_list_mysql_1.html">MYSQL</a></div><span>ㆍ</span><div class="article-list__cell-reg-date">2021-02-18 09:12:26</div></div><div class="flex"><div class="article-list__cell-hit"><i class="far fa-eye"></i> 0</div><div class="article-list__cell-like"><i class="far fa-heart"></i> 0</div><div class="article-list__cell-comment"><i class="far fa-comment-dots"></i> 0</div></div></div><div><div class="article-list__cell-title"><a href="article_detail_18.html"class="hover-underline">마크다운 작성문법 1탄</a></div><div class="article-list__cell-body"># 마크다운 작성문법 1탄 ( 제목 / 목록 / 폰트 스타일 / 색상 )
+---
+## 📕 제목 ( Header )
+### h1 ~ h6 까지 표현 가능 : #의 개수로 표현
+
+#### 마크다운 작성시
+```text
+# h1
+## h2
+### h3
+#### h4
+##### h5
+###### h6
+```
+#### 마크다운 결과
+# h1
+## h2
+### h3
+#### h4
+##### h5
+###### h6
+---
+## 📕 목록
+- ### 순서 표기 O
+ #### 마크다운 작성시
+```text
+1. 첫번째
+2. 두번째
+3. 세번째
+1. 네번째 (1이라고 썼지만 마크다운 결과는 4로 뜸!)
+```
+ #### 마크다운 결과
+1. 첫번째
+2. 두번째
+3. 세번째
+1. 네번째
+
+- ### 순서 표기 X - ( - , * , + ) 세개 중 아무 기호를 써도 된다.
+#### 마크다운 작성시
+```text
+- 나는
+   - 김유경
+      - 천재야
+```
+#### 마크다운 결과
+- 나는
+   - 김유경
+      - 천재야
+---
+## 📕 폰트 스타일
+#### 마크다운 작성시
+```text
+__굵게__
+**굵게**
+_기울여쓰기_
+*기울여쓰기*
+___굵게기울여쓰기___
+***굵게기울여쓰기***
+~~취소선~~
+```
+#### 마크다운 결과
+__굵게__
+**굵게**
+_기울여쓰기_
+*기울여쓰기*
+___굵게기울여쓰기___
+***굵게기울여쓰기***
+~~취소선~~
+
+---
+## 📕 글 색상 
+#### 마크다운 작성시
+```text
+<span style="color:pink">핑크 글씨</span>
+```
+#### 마크다운 결과
+<span style="color:pink">핑크 글씨</span>
+</div><div class="flex"><div class="article-list__cell-writer">김유콩</div><span>ㆍ</span><div class="article-list__cell-board-name"><a href="article_list_mysql_1.html">MYSQL</a></div><span>ㆍ</span><div class="article-list__cell-reg-date">2021-01-21 22:10:27</div></div><div class="flex"><div class="article-list__cell-hit"><i class="far fa-eye"></i> 4</div><div class="article-list__cell-like"><i class="far fa-heart"></i> 0</div><div class="article-list__cell-comment"><i class="far fa-comment-dots"></i> 0</div></div></div><div><div class="article-list__cell-title"><a href="article_detail_17.html"class="hover-underline">마크다운</a></div><div class="article-list__cell-body"># 마크다운이란?
+- 글을 쉽게 쓸수 있도록 해주고 읽는 사람에게도 쉽게 읽힐 수 있도록 해주는 __글쓰기 도구__
+- README 파일이나 온라인 문서, 혹은 일반 텍스트 편집기로 문서 양식을 편집할 때 쓰인다.
+- 마크다운을 이용해 작성된 문서는 __쉽게 HTML 등 다른 문서형태로 변환 가능하다.__</div><div class="flex"><div class="article-list__cell-writer">김유콩</div><span>ㆍ</span><div class="article-list__cell-board-name"><a href="article_list_mysql_1.html">MYSQL</a></div><span>ㆍ</span><div class="article-list__cell-reg-date">2021-01-21 17:49:24</div></div><div class="flex"><div class="article-list__cell-hit"><i class="far fa-eye"></i> 2</div><div class="article-list__cell-like"><i class="far fa-heart"></i> 0</div><div class="article-list__cell-comment"><i class="far fa-comment-dots"></i> 0</div></div></div><div><div class="article-list__cell-title"><a href="article_detail_6.html"class="hover-underline">SQL 테이블 생성</a></div><div class="article-list__cell-body"># SQL) 테이블 생성하기
 
 sql 예시
 ```sql
