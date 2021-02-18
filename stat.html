@@ -20,6 +20,9 @@
 <!-- 스크롤트리거 -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/ScrollTrigger.min.js"></script>
 
+<!-- chart.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.3.0/Chart.min.js"></script>
+
 <!-- 하이라이트 라이브러리 추가, 토스트 UI 에디터에서 사용됨 -->
 <script
 	src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.4.1/highlight.min.js"></script>
@@ -66,8 +69,8 @@
 <meta name="title" content="HeyCong" />
 <meta name="keywords" content="HTML, CSS, JAVASCRIPT, JAVA, SPRING, MySQL, 리눅스, 리액트" />
 <meta name="copyright" content="HeyCong" />
-<meta name="pubdate" content="2021-02-18T10:01:24" />
-<meta name="lastmod" content="2021-02-18T10:01:24" />
+<meta name="pubdate" content="2021-02-18T16:45:32" />
+<meta name="lastmod" content="2021-02-18T16:45:32" />
 <!-- 오픈그래프 적용 -->
 <meta property="og:site_name" content="HeyCong" />
 <meta property="og:type" content="website" />
@@ -78,8 +81,8 @@
 <meta property="og:image:alt" content="blog.heycong.com" />
 <meta property="og:image:width" content="486" />
 <meta property="og:image:height" content="254" />
-<meta property="og:updated_time" content="2021-02-18T10:01:24"/>
-<meta property="og:pubdate" content="2021-02-18T10:01:24" />
+<meta property="og:updated_time" content="2021-02-18T16:45:32"/>
+<meta property="og:pubdate" content="2021-02-18T16:45:32" />
 <meta property="og:url" content="https://blog.heycong.com" />
 <!-- TWITTER -->
 <meta name="twitter:card" content="summary_large_image" />
@@ -186,42 +189,101 @@
 		<!-- 탑바 끝 -->
 
 
-		<main class="flex-grow-1"><section class="article-stat-box con-min-width">
-    <div class="article-stat con">
-      <div class="article-stat__menu flex flex-jc-c">
-        <div class="article-stat__menu-totalMembersCount flex flex-jc-c flex-ai-c">회원수</div>
-        <div class="article-stat__menu-totalArticlesCount flex flex-jc-c flex-ai-c">전체 게시물 수 </div>
-        <div class="article-stat__menu-totalArticlesHit flex flex-jc-c flex-ai-c">전체게시물 조회수</div>
-        <div class="article-stat__menu-boardArticlesCount flex flex-jc-c flex-ai-c">각게시판별 게시물 수</div>
-        <div class="article-stat__menu-boardArticlesHit flex flex-jc-c flex-ai-c">각 게시판별 게시물 조회수</div>
-      </div>
-      <div class="article-stat__content bd-body-box none flex-jc-c">
-        <div class="article-stat__content-totalMembersCount"><img src="https://cdn.pixabay.com/photo/2017/02/25/23/52/connections-2099068_960_720.png" alt=""><div>1명</div></div>
-        <div class="article-stat__content-totalArticlesCount"><img src="https://cdn.pixabay.com/photo/2016/08/17/16/29/man-1600958_960_720.png" alt=""><div>총 27 개</div></div>
-        <div class="article-stat__content-totalArticlesHit"><img src="https://cdn.pixabay.com/photo/2016/08/18/08/58/woman-1602365_960_720.png" alt=""><div>총 105 회</div></div>
-        <div class="article-stat__content-boardArticlesCount"><img src="https://cdn.pixabay.com/photo/2016/08/17/16/35/businessman-1600975_960_720.png" alt="">
-          <div>
-            <div>JAVA게시판 8 개</div><div>MYSQL게시판 1 개</div><div>HTML/CSS게시판 11 개</div><div>개발일지게시판 7 개</div>
-          </div>
+		<main class="flex-grow-1"><div class="con-min-width stat-content">
+    <div class="con">
+      <div class="stat-content__articles-count">
+        <div class="stat-content__title">게시물수 통계</div>
+        <div class="chart-container">
+          <div class="stat-content__total-count">Total : 25 개</div>
+          <canvas id="pie-chart-1"></canvas>
         </div>
-        <div class="article-stat__content-boardArticlesHit">
-          <img src="https://cdn.pixabay.com/photo/2016/08/18/08/55/presentation-1602360_960_720.png" alt="">
-          <div>
+      </div>
 
-         <div>JAVA게시판 27 회</div><div>MYSQL게시판 3 회</div><div>HTML/CSS게시판 56 회</div><div>개발일지게시판 19 회</div>
-
-          </div>
+      <div class="stat-content__hits-count">
+        <div class="stat-content__title">조회수 통계</div>
+        <div class="chart-container">
+          <div class="stat-content__total-count">Total : 105 회</div>
+          <canvas id="pie-chart-2"></canvas>
         </div>
       </div>
     </div>
-  </section>
-  <section class="con-min-width">
-        <div class="article-stat__info con">
-        <h1>
-          내용을 확인하려면 메뉴판을 클릭해주세요.
-        </h1>
-      </div>
-   </section>		</main>
+</div>
+
+<script>
+var data = {
+  datasets: [
+    {
+      data: [10,1,7,7],
+      backgroundColor: ["#F5A0A0", "#FAD291", "#70D2B4", "#5ABEFF"]
+    }
+  ],
+  labels: ["JAVA", "MYSQL", "HTML/CSS", "개발일지"]
+};
+
+var targetLink = [
+  "http://www.google.com",
+  "http://www.daum.net",
+  "http://www.apple.com",
+  "http://www.apple.com"
+];
+
+$(document).ready(function () {
+  var canvas = document.getElementById("pie-chart-1");
+  var ctx = canvas.getContext("2d");
+  var myNewChart = new Chart(ctx, {
+    type: "doughnut",
+    data: data
+  });
+
+  canvas.onclick = function (evt) {
+    var activePoints = myNewChart.getElementsAtEvent(evt);
+    if (activePoints[0]) {
+      var chartData = activePoints[0]["_chart"].config.data;
+      var idx = activePoints[0]["_index"];
+
+      var target = targetLink[idx];
+      window.open(target, "_blank");
+    }
+  };
+});
+
+var data2 = {
+  datasets: [
+    {
+      data: [33,3,50,19],
+      backgroundColor: ["#F5A0A0", "#FAD291", "#70D2B4", "#5ABEFF"]
+    }
+  ],
+  labels: ["JAVA", "MYSQL", "HTML/CSS", "개발일지"]
+};
+
+var targetLink = [
+  "http://www.google.com",
+  "http://www.daum.net",
+  "http://www.apple.com",
+  "http://www.apple.com"
+];
+
+$(document).ready(function () {
+  var canvas = document.getElementById("pie-chart-2");
+  var ctx = canvas.getContext("2d");
+  var myNewChart = new Chart(ctx, {
+    type: "doughnut",
+    data: data2
+  });
+
+  canvas.onclick = function (evt) {
+    var activePoints = myNewChart.getElementsAtEvent(evt);
+    if (activePoints[0]) {
+      var chartData = activePoints[0]["_chart"].config.data;
+      var idx = activePoints[0]["_index"];
+
+      var target = targetLink[idx];
+      window.open(target, "_blank");
+    }
+  };
+});
+</script>		</main>
 		
 		<!-- 하단바 시작 -->
 		<footer class="bottom-bar con-min-width">
